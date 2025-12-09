@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cherry+ Journey — Sumit Saha</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    /* CENTER-LINE TIMELINE */
+    .timeline-wrapper {
+      width: 90%;
+      margin: 100px auto;
+      position: relative;
+    }
+
+    /* Vertical line */
+    .timeline-wrapper::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: linear-gradient(#ff005d, #ff87ad, #ffffff);
+      box-shadow: 0 0 15px #ff006a;
+    }
+
+    /* Each timeline block */
+    .timeline-block {
+      width: 100%;
+      position: relative;
+      margin: 80px 0;
+    }
+
+    /* LEFT & RIGHT CARDS */
+    .timeline-card {
+      width: 44%;
+      padding: 25px;
+      border-radius: 15px;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 0 20px rgba(255,0,90,0.15);
+    }
+
+    .left { float: left; transform: translateX(-5%); }
+    .right { float: right; transform: translateX(5%); }
+
+    /* glowing dot on line */
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 22px;
+      height: 22px;
+      background: #ff006a;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #ff006a, 0 0 40px #ff006a;
+      top: 50%;
+    }
+
+    /* Image styling */
+    .timeline-image {
+      width: 70%;
+      max-width: 70%;
+      border-radius: 12px;
+      margin: 12px auto 0;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Clear floats */
+    .timeline-block::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+  </style>
+</head>
+
+<body class="page-cherry">
+
+<div class="page-transition"></div>
+<div class="cursor-light"></div>
+
+<nav>
+  <h3>SUMIT SAHA</h3>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="strategist.html">Strategist</a>
+    <a href="cherry.html">Cherry+</a>
+    <a href="consultant.html">Consultant</a>
+    <a href="production.html">Production</a>
+    <a href="interests.html">Interests</a>
+  </div>
+  </nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="parallax-layer layer-back"></div>
+  <div class="parallax-layer layer-mid"></div>
+
+  <div class="parallax-layer layer-front">
+    <h1>THE UNSCRIPTED<br>JOURNEY</h1>
+    <h2>Creator → Leader → Curator → Mentor</h2>
+    <p class="tagline">My greatest leadership experience. A community that taught me more than I taught it.<br>
+       Built from solitude. Shaped online. Tested physically. Reborn in purpose.</p>
+  </div>
+</section>
+
+
+<!-- TIMELINE -->
+<div class="timeline-wrapper">
+
+  <!-- GENESIS -->
+  <div class="timeline-block fade-up">
+    <div class="timeline-card left">
+      <h3>GENESIS — The Digital Spark (2021)</h3>
+      <ul>
+        <li>Online semester sparked a need for connection and execution.</li>
+        <li>Started a Discord server to organize curious, high-energy students.</li>
+        <li>Built first systems, roles, and rituals — fully remote.</li>
+      </ul>
+      <img src="chn3.png" class="timeline-image" alt="Early Cherry+ community moments">
+    </div>
+    <span class="timeline-dot"></span>
+  </div>
+
+
+  <!-- PHASE I -->
+  <div class="timeline-block fade-up">
+    <div class="timeline-card right">
+      <h3>PHASE I — Editorial Director</h3>
+      <img src="chn.jpg" class="timeline-image" alt="Brand identity and design systems">
+      <ul>
+        <li>Designed the complete brand kit: voice, identity, and narrative rules.</li>
+        <li>Established editorial and design systems to ship consistently.</li>
+        <li>Turned creativity into a framework; strategy into expression.</li>
+      </ul>
+    </div>
+    <span class="timeline-dot"></span>
+  </div>
+
+
+  <!-- CRASH -->
+  <div class="timeline-block fade-up">
+    <div class="timeline-card left">
+      <h3>THE CRASH — The Turning Point</h3>
+      <ul>
+        <li>Digital → physical transition clashed with institutional constraints.</li>
+        <li>A planning slip caused disputes and a hit to morale.</li>
+        <li>We paused, reflected, and recommitted to rebuilding — properly.</li>
+      </ul>
+    </div>
+    <span class="timeline-dot"></span>
+  </div>
+
+
+  <!-- PHASE II -->
+  <div class="timeline-block fade-up">
+    <div class="timeline-card right">
+      <h3>PHASE II — Corporate Director</h3>
+      <img src="serinow.jpg" class="timeline-image" alt="Stakeholder engagement and operations reboot">
+      <ul>
+        <li>Recruited a new core team around clear roles and outcomes.</li>
+        <li>Rebuilt operating systems and cadences from zero.</li>
+        <li>Rebranded culture with standards for quality and ownership.</li>
+        <li>Revamped execution — every brick placed with intent.</li>
+      </ul>
+    </div>
+    <span class="timeline-dot"></span>
+  </div>
+
+
+  <!-- PHASE III -->
+  <div class="timeline-block fade-up">
+    <div class="timeline-card left">
+      <h3>PHASE III — Innovations Director</h3>
+      <img src="atar2.jpg" class="timeline-image" alt="Innovation showcase">
+      <ul>
+        <li>Launched high-impact creative programs and talent pipelines.</li>
+        <li>Brought structure to chaos — templates, briefs, and review loops.</li>
+        <li>Evolved the visual system — more aesthetic, more strategic.</li>
+      </ul>
+    </div>
+    <span class="timeline-dot"></span>
+  </div>
+
+
+  <!-- ATARAXIA -->
+  <div class="timeline-block fade-up">
+    <div class="timeline-card right">
+      <h3>ATARAXIA — Reaching 25,000+ People</h3>
+      <img src="atar.jpg" class="timeline-image" alt="Ataraxia — campus-wide creative festival">
+      <ul>
+        <li>Peak event: reached 25,000+ students across campus.</li>
+        <li>Food courts, art exhibits, and creative arenas working in sync.</li>
+        <li>Operations, PR, and production run as one integrated system.</li>
+      </ul>
+    </div>
+    <span class="timeline-dot"></span>
+  </div>
+
+
+  <!-- PHASE IV -->
+  <div class="timeline-block fade-up">
+    <div class="timeline-card left">
+      <h3>PHASE IV — Chief Operations Officer (COO)</h3>
+      <img src="sss.jpg" class="timeline-image" alt="Ops leadership">
+      <ul>
+        <li>Scaled systems across teams; introduced KPI dashboards.</li>
+        <li>Built repeatable ops frameworks and playbooks.</li>
+        <li>Transitioned Cherry+ into a structured, accountable organization.</li>
+      </ul>
+    </div>
+    <span class="timeline-dot"></span>
+  </div>
+
+
+  <!-- COMMUNITY OUTREACH -->
+  <div class="timeline-block fade-up">
+    <div class="timeline-card right">
+      <h3>COMMUNITY OUTREACH — Orphanage Programs</h3>
+      <img src="orp.jpg" class="timeline-image" alt="Orphanage outreach">
+      <ul>
+        <li>Designed activity-led learning days for kids.</li>
+        <li>Coordinated volunteers, logistics, and donations transparently.</li>
+        <li>Kept impact measurable — participation, materials, and outcomes.</li>
+      </ul>
+    </div>
+    <span class="timeline-dot"></span>
+  </div>
+
+
+  <!-- TODAY -->
+  <div class="timeline-block fade-up">
+    <div class="timeline-card left">
+      <h3>TODAY — Mentor, From New York City</h3>
+      <img src="ny3.jpg" class="timeline-image" alt="NYC — Remote mentorship">
+      <ul>
+        <li>Mentor the leadership council remotely — weekly cadences.</li>
+        <li>Share frameworks: decision trees, comms kits, and review ladders.</li>
+        <li>Leadership doesn’t need proximity — it needs intention.</li>
+      </ul>
+    </div>
+    <span class="timeline-dot"></span>
+  </div>
+
+
+</div>
+
+<footer style="margin:80px auto; text-align:center; color:#A9A9A9;">© 2025 Sumit Saha • <a class="contact" href="mailto:sumitsaha.ssh@gmail.com" aria-label="Email Sumit">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+  Contact me
+</a></footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

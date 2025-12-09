@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Strategist — Sumit Saha</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:,">
+
+  <style>
+    /* SECTION 1 — Leadership Roles Row */
+    .leader-row {
+      display: flex;
+      gap: 20px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .leader-card {
+      flex: 1;
+      min-width: 280px;
+      padding: 30px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      box-shadow: 0 0 30px rgba(255,255,255,0.05);
+    }
+
+    .leader-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.20;
+      z-index: 0;
+      mix-blend-mode: lighten;
+      filter: blur(2px);
+    }
+
+    .leader-card h3, 
+    .leader-card p {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Assigning your logos */
+    #logo-cherry::before { background-image: url('25000327-33c7-4226-a57c-402c3aee7e9a.png'); }
+    #logo-waveform::before { background-image: url('4d499739-03c5-427a-8e34-f2f3a438a55e.png'); }
+    #logo-zomato::before { background-image: url('09a84b2b-729f-4523-9d16-e1444a6c7ea9.png'); }
+
+    /* STRATEGIC METHODS — Attractive Grid */
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .method-box {
+      padding: 22px 28px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 14px;
+      color: #eee;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 0 25px rgba(255,0,80,0.15);
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 92px;
+      text-align: center;
+    }
+
+    .method-box:hover {
+      background: rgba(255,0,80,0.15);
+      transform: translateY(-4px);
+    }
+
+    /* PRINCIPLES — Tag Chips */
+    .principle-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 40px;
+    }
+
+    .principle-chip {
+      padding: 12px 20px;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 40px;
+      color: #fff;
+      font-size: 15px;
+      box-shadow: 0 0 20px rgba(255,0,80,0.18);
+      transition: 0.25s;
+    }
+
+    .principle-chip:hover {
+      background: rgba(255, 0, 80, 0.3);
+      transform: scale(1.05);
+    }
+
+    /* CASE STUDY GRID */
+    .case-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
+      margin-top: 60px;
+      align-items: stretch;
+    }
+
+    .case-card {
+      position: relative;
+      min-height: 380px;
+      padding: 36px 30px;
+      border-radius: 18px;
+      color: #fff;
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 0 22px rgba(255,0,60,0.12);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .case-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.14;
+      z-index: 0;
+      filter: grayscale(10%) blur(0.3px);
+    }
+
+    .case-card h3, .case-card p, .case-card ul {
+      position: relative;
+      z-index: 1;
+      margin: 0 auto;
+    }
+
+    .case-card h3 {
+      margin-bottom: 12px;
+      font-size: 30px;
+      letter-spacing: .3px;
+    }
+
+    .case-card ul {
+      text-align: left;
+      max-width: 720px;
+      padding-left: 18px;
+      line-height: 1.6;
+    }
+    .case-card ul li { margin-bottom: 6px; }
+
+    /* Background assignments */
+    .case-zomato::before { background-image: url('zomato.svg'); background-size: 85%; opacity: 0.10; }
+    .case-waveform::before { background-image: url('wavform.png'); background-size: 70%; background-position: center 52%; opacity: 0.12; }
+    .case-cherry::before { background-image: url('chn.jpg'); background-size: cover; background-position: center; opacity: 0.12; }
+
+    /* Bigger section headings on this page */
+    .container h2 { font-size: 30px; }
+
+  </style>
+</head>
+
+<body class="page-strategist">
+
+<div class="page-transition"></div>
+<div class="cursor-light"></div>
+
+<nav>
+  <h3>SUMIT SAHA</h3>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="strategist.html">Strategist</a>
+    <a href="cherry.html">Cherry+</a>
+    <a href="consultant.html">Consultant</a>
+    <a href="production.html">Production</a>
+    <a href="interests.html">Interests</a>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="parallax-layer layer-back"></div>
+  <div class="parallax-layer layer-mid"></div>
+
+  <div class="parallax-layer layer-front">
+    <h1>STRATEGIST</h1>
+    <h2>Systems • Operations • Thinking • Architecture</h2>
+    <p class="tagline">I build operational and creative structures that let teams execute smoothly, scale faster, and think clearer.</p>
+  </div>
+</section>
+
+
+<div class="container">
+
+
+  <!-- LEADERSHIP ROLES -->
+  <h2 class="fade-up">Leadership Systems</h2>
+
+  <div class="leadership-container fade-up">
+
+    <!-- Cherry+ Network -->
+    <div class="leadership-card">
+      <img src="assets/logos/chn3.png" class="leadership-logo-bg" onerror="this.src='chn3.png';this.onerror=null;">
+      <div class="org-name">
+        <img src="assets/logos/chn3.png" class="org-logo" onerror="this.src='chn3.png';this.onerror=null;">
+        Cherry+ Network
+      </div>
+      <div class="designation">Chief Operating Officer</div>
+      <div class="impact">
+        Scaled workflows, teams, booking pipelines & orchestrated 
+        multi-event execution + brand operations.
+      </div>
+    </div>
+
+    <!-- Waveform Labs -->
+    <div class="leadership-card">
+      <img src="assets/logos/waveform.png" class="leadership-logo-bg" onerror="this.src='wavform.png';this.onerror=null;">
+      <div class="org-name">
+        <img src="assets/logos/waveform.png" class="org-logo" onerror="this.src='wavform.png';this.onerror=null;">
+        Waveform Labs
+      </div>
+      <div class="designation">KPO & Content Strategy Head</div>
+      <div class="impact">
+        Designed end-to-end operational service pipelines & built
+        robust client delivery frameworks for high-volume workflows.
+      </div>
+    </div>
+
+    <!-- Zomato -->
+    <div class="leadership-card">
+      <img src="assets/logos/zomato.png" class="leadership-logo-bg" onerror="this.src='zomato.svg';this.onerror=null;">
+      <div class="org-name">
+        <img src="assets/logos/zomato.png" class="org-logo" onerror="this.src='zomato.svg';this.onerror=null;">
+        Zomato
+      </div>
+      <div class="designation">Associate</div>
+      <div class="impact">
+        Optimized IRCTC delivery flow & engineered automated 
+        customer-resolution systems reducing issue detection time.
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <!-- STRATEGIC METHODS -->
+  <h2 class="fade-up" style="margin-top:70px;">Strategic Methods</h2>
+
+  <div class="method-grid fade-up">
+    <div class="method-box">Decision Logic Systems</div>
+    <div class="method-box">Cross-team Workflow Engineering</div>
+    <div class="method-box">Data-driven Strategy</div>
+    <div class="method-box">Operational Architecture</div>
+    <div class="method-box">Narrative & Brand Strategy</div>
+    <div class="method-box">Organizational Structuring</div>
+  </div>
+
+
+
+  <!-- PRINCIPLES -->
+  <h2 class="fade-up" style="margin-top:70px;">Principles</h2>
+
+  <div class="principle-row fade-up">
+    <div class="principle-chip">Structure Enables Creativity</div>
+    <div class="principle-chip">Clarity Beats Complexity</div>
+    <div class="principle-chip">Data Reveals Truth</div>
+    <div class="principle-chip">Systems Must Be Human-Friendly</div>
+  </div>
+
+
+
+  <!-- STRATEGY CASE STUDIES -->
+  <h2 class="fade-up" style="margin-top:90px;">Strategic Execution in Action</h2>
+
+  <div class="case-row fade-up">
+
+    <!-- ZOMATO -->
+    <div class="case-card case-zomato">
+      <h3>Zomato — IRCTC Flow Optimization</h3>
+      <ul>
+        <li>Analyzed railway delivery pipeline to cut latency during train halts.</li>
+        <li>Built operational logic to identify order risk zones in real time.</li>
+        <li>Improved CX with automated comms when deliveries faced constraints.</li>
+        <li>Strengthened ecosystem using predictive alerts and fallback flows.</li>
+      </ul>
+    </div>
+
+    <!-- WAVEFORM -->
+    <div class="case-card case-waveform">
+      <h3>Waveform Labs — Full Operational Pipeline</h3>
+      <ul>
+        <li>Built end‑to‑end structure for content, production, analytics, marketing, and client ops.</li>
+        <li>Designed execution plans for 30+ services (research, editing, podcasts, SMM, analytics).</li>
+        <li>Mapped workflows to remove bottlenecks and align cross‑team roles.</li>
+      </ul>
+    </div>
+
+    <!-- CHERRY+ -->
+    <div class="case-card case-cherry">
+      <h3>Cherry+ Network — Event & Client Strategy Engine</h3>
+      <ul>
+        <li>Aligned booking → marketing → finance → execution for every project.</li>
+        <li>Built planning pipelines tied to booking schedules and budgets.</li>
+        <li>Designed financial allocation structures per project.</li>
+        <li>Gave marketing cycles enough runway for high‑quality launches.</li>
+        <li>Synchronized ops, creative, finance, and logistics as one engine.</li>
+      </ul>
+      <p>This alignment is what helped Cherry+ scale past 25,000 students.</p>
+    </div>
+
+  </div>
+
+
+  <footer>© 2025 Sumit Saha • <a class="contact" href="mailto:sumitsaha.ssh@gmail.com" aria-label="Email Sumit">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    Contact me
+  </a></footer>
+
+</div>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

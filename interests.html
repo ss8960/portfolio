@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interests — Sumit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:,">
+    <style>
+        /* Page-specific styles for interests media sections */
+        .title {
+            font-size: 4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            background: linear-gradient(90deg, #fff 0%, #c9c9c9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .parallax-box {
+            position: relative;
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0px 0px 40px rgba(0,0,0,0.7);
+        }
+        /* Full-bleed media that cover the entire viewport width */
+        .full-bleed {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+        }
+        /* Ensure media cover the entire box */
+        .parallax-image,
+        .parallax-box video {
+            width: 100%;
+            height: auto;
+            object-fit: contain; /* show entire image/video without cropping */
+            transform: none;
+            transition: none;
+            display: block;
+        }
+        .parallax-box:hover .parallax-image,
+        .parallax-box:hover video {
+            transform: none;
+        }
+        .label {
+            position: absolute;
+            bottom: 30px;
+            left: 40px;
+            padding: 10px 22px;
+            background: rgba(0,0,0,0.55);
+            border-radius: 8px;
+            font-size: 1.4rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        @media (max-width: 720px) {
+            .title { font-size: 2.6rem; }
+            .parallax-box { height: auto; border-radius: 18px; }
+            .label { font-size: 1.1rem; left: 18px; bottom: 20px; }
+        }
+    </style>
+</head>
+<body class="page-interests">
+    <div class="page-transition"></div>
+    <div class="cursor-light"></div>
+
+    <nav>
+        <h3>SUMIT SAHA</h3>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="strategist.html">Strategist</a>
+            <a href="cherry.html">Cherry+</a>
+            <a href="consultant.html">Consultant</a>
+            <a href="production.html">Production</a>
+            <a href="interests.html">Interests</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="parallax-layer layer-back"></div>
+        <div class="parallax-layer layer-mid"></div>
+        <div class="parallax-layer layer-front">
+            <h1>INTERESTS</h1>
+            <h2>Food • Sports • Movies • Music • Golf</h2>
+            <p class="tagline">A curated lens into the things that move me — food that anchors memories, sports that shaped discipline, films that expanded imagination, music that fuels flow, and golf that brings silence, focus, and balance.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div id="interests-root"></div>
+        <footer>© 2025 Sumit Saha • <a class="contact" href="mailto:sumitsaha.ssh@gmail.com" aria-label="Email Sumit">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Contact me
+        </a></footer>
+    </div>
+
+    <script src="script.js" defer></script>
+    <script>
+        // Dynamic sections configuration
+        const interestsData = [
+            { title: 'Food',   type: 'image', src: 'khana.jpg',  alt: 'Food Collage',    label: 'Culinary Memories' },
+            { title: 'Sports', type: 'image', src: 'sport.png',  alt: 'Sports Poster',   label: 'Football • Cricket • Tennis • F1' },
+            { title: 'Movies', type: 'image', src: 'movie.png',  alt: 'Movies Collage',  label: 'Cinema That Stayed With Me' },
+            { title: 'Music',  type: 'image', src: 'song.png',   alt: 'Music Poster',    label: 'Albums • Artists • Energy' },
+            { title: 'Golf',   type: 'video', src: 'golf2.mp4',  alt: '',                label: 'Focus • Silence • Rhythm' }
+        ];
+
+        const root = document.getElementById('interests-root');
+
+        for (const item of interestsData) {
+            const section = document.createElement('section');
+
+            const heading = document.createElement('h1');
+            heading.className = 'title fade-up';
+            heading.textContent = item.title;
+
+            const box = document.createElement('div');
+            box.className = 'parallax-box full-bleed fade-up';
+
+            let media;
+            if (item.type === 'video') {
+                media = document.createElement('video');
+                media.src = item.src;
+                media.autoplay = true;
+                media.muted = true;
+                media.loop = true;
+                media.playsInline = true;
+            } else {
+                media = document.createElement('img');
+                media.src = item.src;
+                media.alt = item.alt || item.title;
+                media.loading = 'lazy';
+                media.className = 'parallax-image';
+            }
+
+            box.appendChild(media);
+
+            const label = document.createElement('div');
+            label.className = 'label';
+            label.textContent = item.label;
+            box.appendChild(label);
+
+            section.appendChild(heading);
+            section.appendChild(box);
+            root.appendChild(section);
+        }
+    </script>
+</body>
+</html>
