@@ -73,5 +73,60 @@ document.addEventListener('mousemove', (e) => {
 /* Initial transform */
 requestUpdate();
 
+// -------------------------
+//   MOBILE NAV DRAWER
+// -------------------------
+(function setupMobileNav() {
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+
+  // Create hamburger button if absent
+  let toggle = nav.querySelector('.nav-toggle');
+  if (!toggle) {
+    toggle = document.createElement('button');
+    toggle.className = 'nav-toggle';
+    toggle.setAttribute('aria-label', 'Open menu');
+    toggle.innerHTML = '<span></span><span></span><span></span>';
+    nav.appendChild(toggle);
+  }
+
+  // Build drawer with same links as top nav
+  const linkContainer = nav.querySelector('nav > div, :scope > div');
+  const drawer = document.createElement('aside');
+  drawer.className = 'side-drawer';
+  drawer.innerHTML = (linkContainer ? linkContainer.innerHTML : '');
+
+  const backdrop = document.createElement('div');
+  backdrop.className = 'drawer-backdrop';
+
+  document.body.appendChild(drawer);
+  document.body.appendChild(backdrop);
+
+  const closeDrawer = () => {
+    drawer.classList.remove('open');
+    backdrop.classList.remove('show');
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+  };
+  const openDrawer = () => {
+    drawer.classList.add('open');
+    backdrop.classList.add('show');
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+  };
+
+  toggle.addEventListener('click', () => {
+    if (drawer.classList.contains('open')) closeDrawer();
+    else openDrawer();
+  });
+  backdrop.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+  // Close on resize back to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 720) closeDrawer();
+  });
+})();
+
 // Removed slide viewer JS
   
