@@ -111,22 +111,24 @@ nav a:hover {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 34px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(30,30,30,0.5);
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: radial-gradient(circle at 30% 30%, rgba(255,0,90,0.35), rgba(20,20,20,0.75));
+  box-shadow: 0 0 12px rgba(255,0,90,0.25), inset 0 0 0 1px rgba(255,255,255,0.06);
   color: var(--white);
   cursor: pointer;
   transition: .25s var(--ease);
 }
 .nav-toggle span {
   display: block;
-  width: 18px;
+  width: 20px;
   height: 2px;
   background: currentColor;
   opacity: .9;
-  margin: 3px 0;
+  margin: 4px 0;
+  border-radius: 999px;
 }
 
 /* Side drawer */
@@ -1891,4 +1893,45 @@ footer a svg {
   .hp-pdf-frame { display: none; }       /* hide inline PDF on small screens */
   .hp-pdf-fallback { display: block; }   /* show open-in-new button */
 }
->>>>>>> 8fe39b2 (Responsive mobile improvements: drawer nav, single-column strategy, PDF mobile fallback)
+
+/* ------------------------------
+   CHERRY+ TIMELINE MOBILE
+------------------------------ */
+.page-cherry .timeline-wrapper { width: 92%; max-width: 960px; }
+
+@media (max-width: 900px) {
+  .page-cherry .timeline-wrapper::before { left: 10%; }
+  .page-cherry .timeline-card { width: 80%; }
+}
+
+@media (max-width: 720px) {
+  .page-cherry .timeline-wrapper { width: 100%; margin: 40px auto; }
+  .page-cherry .timeline-wrapper::before {
+    left: 8%;
+    width: 2px;
+  }
+  .page-cherry .timeline-block {
+    margin: 48px 0 32px;
+  }
+  .page-cherry .timeline-card {
+    width: 88%;
+    float: none;
+    transform: none;
+    margin-left: 12%;
+    padding: 22px;
+  }
+  .page-cherry .left,
+  .page-cherry .right {
+    float: none;
+    transform: none;
+  }
+  .page-cherry .timeline-dot {
+    left: 8%;
+    top: 22px;
+    margin-top: 0;
+  }
+  .page-cherry .timeline-image {
+    width: 100%;
+    max-width: 100%;
+  }
+}
